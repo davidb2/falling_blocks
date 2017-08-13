@@ -1,5 +1,5 @@
 /** Class representing a matrix. */
-class Matrix {
+export class Matrix {
     private _rows: number;
     private _cols: number;
     private _matrix: number[][];

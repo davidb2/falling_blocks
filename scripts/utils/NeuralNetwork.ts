@@ -1,5 +1,7 @@
+import { Matrix } from "./Matrix";
+
 /** Class representing a Neural Network. */
-class NeuralNetwork {
+export class NeuralNetwork {
     private _layers: number[];
     private _weights: Matrix[];
     private _biases: Matrix[];

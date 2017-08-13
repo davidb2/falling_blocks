@@ -1,4 +1,4 @@
-class Color {
+export class Color {
     private _r: number;
     private _g: number;
     private _b: number;
