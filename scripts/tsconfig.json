@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "sourceMap": true,
+        "module": "commonjs",
+        "inlineSourceMap": true,
+        "inlineSources": true,
         "lib": [
             "dom",
             "es2015",
