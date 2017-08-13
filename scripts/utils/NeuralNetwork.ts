@@ -1,5 +1,3 @@
-/// <reference path="Matrix.ts" />
-
 /** Class representing a Neural Network. */
 class NeuralNetwork {
     private _layers: number[];
@@ -41,7 +39,7 @@ class NeuralNetwork {
     get weights(): Matrix[] { return this._weights; }
 
     /** The network biases. */
-    get biases(): Matrix[] {return this._biases; }
+    get biases(): Matrix[] { return this._biases; }
 
     /**
      * The activation function used during feed-forward. 
