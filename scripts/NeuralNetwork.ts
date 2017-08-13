@@ -51,7 +51,7 @@ class NeuralNetwork {
      * @returns {number} - The activation function applied to the given number.
      */
     private activationFunction(x: number): number {
-        return 1.0 / (1.0 - Math.exp(-x));
+        return 1.0 / (1.0 + Math.exp(-x));
     }
 
     /**
