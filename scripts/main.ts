@@ -1,4 +1,4 @@
-/// <reference path="matrix.ts" />
+/// <reference path="NeuralNetwork.ts" />
 
-let A: Matrix = Matrix.random(5, 3);
-console.log(Matrix.negate(A));
+let nn: NeuralNetwork = new NeuralNetwork([4, 3, 2]);
+console.log(nn.feedForward([2 ,4, 2, 1]));
