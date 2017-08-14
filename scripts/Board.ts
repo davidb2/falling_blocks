@@ -28,7 +28,7 @@ export class Board {
         for (let row: number = 0; row < rows; row++) {
             this._board[row] = [];
             for (let col: number = 0; col < cols; col++) {
-                if ([row, col] === playerPosition) {
+                if (row === playerPosition[0] && col === playerPosition[1]) {
                     this._board[row][col] = new Player();
                 } else {
                     this._board[row][col] = new Blank();
@@ -46,6 +46,11 @@ export class Board {
     get board(): Block[][] { return this._board; }
 
     set playerPosition(position: [number, number]) {
+        if (position === null) {
+            this._playerPosition = position;
+            return;
+        }
+
         console.assert(
             0 <= position[0] && position[0] < this.rows,
             'Player row position must be a non-negative integer less than the number of rows on the board.'
