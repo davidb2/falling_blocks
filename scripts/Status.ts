@@ -1,0 +1,8 @@
+export enum Status {
+    CROSSOVER, 
+    NOTHING,
+    PENDING,
+    UPDATE_GENERATION,
+    MUTATE,
+    EVALUATE_FITNESS,
+}
