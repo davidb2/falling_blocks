@@ -27,7 +27,9 @@ export class Game {
                 this.board.playerPosition = [this.board.playerPosition[0], this.board.playerPosition[1] - 1];
             } else {
                 console.error('Impossible state: Player has run into another player.');
-            }
+            } 
+        } else {
+            this.board.playerPosition = null;
         }
     }
 
@@ -44,6 +46,8 @@ export class Game {
             } else {
                 console.error('Impossible state: Player has run into another player.');
             }
+        } else {
+            this.board.playerPosition = null;
         }
     }
 
