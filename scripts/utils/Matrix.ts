@@ -89,7 +89,7 @@ export class Matrix {
         for (let row: number = 0; row < rows; row++) {
             toReturn[row] = [];
             for (let col: number = 0; col < cols; col++) {
-                toReturn[row][col] = Math.random();
+                toReturn[row][col] = 40 * (Math.random() - 0.5);
             }
         }
         return new Matrix(toReturn);
