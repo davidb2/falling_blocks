@@ -37,6 +37,17 @@ export class Board {
         }
     }
 
+    public vectorize(): number[] {
+        let toReturn: number[] = [];
+        let idx: number = 0;
+        for (let row: number = 0; row < this.rows; row++) {
+            for (let col: number = 0; col < this.cols; col++) {
+                toReturn[idx++] = this.board[row][col].number;
+            }
+        }
+        return toReturn;
+    }
+
     get rows(): number { return this._rows; }
 
     get cols(): number { return this._cols; }
