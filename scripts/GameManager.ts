@@ -3,42 +3,54 @@ import { Color } from './utils/Color'
 import { Obstacle } from './blocks/Obstacle'
 import { Blank } from './blocks/Blank'
 import { Player } from './blocks/Player'
+import { Brain } from './neuroevolution/Brain'
+import { Random } from './utils/Random'
 
 export class GameManager {
+    private static readonly SEED: number = 17;
     private readonly _canvasElement: HTMLCanvasElement;
     private readonly _context: CanvasRenderingContext2D;
     private readonly _game: Game;
-    private _score: number;  
+    private readonly _random: Random;
+    private _score: number;
+    private _ticks: number;
 
     constructor(canvasElement: HTMLCanvasElement, rows: number, cols: number) {
         this._canvasElement = canvasElement;
         this._context = canvasElement.getContext('2d');
         this._game = new Game(rows, cols);
+        this._random = new Random(GameManager.SEED);
+        this.ticks = 0;
         this.score = 0;
     }
 
-    public play() {
+    public play(player: Brain = null, callback = () => {}) {
         this.draw();
         let id: number = setInterval(() => 
             {
                 this.draw();
                 if (!this.game.playerIsAlive) {
+                    callback();
                     clearInterval(id);
                 }
 
-                if (this.score % 15 == 0) {
+                if (this.ticks % 1 == 0) {
                     this.moveDown();
                 }
-                if (this.score % 60 == 0) {
+                if (this.ticks % 4 == 0) {
                     this.addObstacles();
+                    this.score++;
                 }
-                this.score++;
-            }, 10);
+                this.ticks++;
+                if (player !== null) {
+                    player.move(this.game);
+                }
+            }, 1);
     }
 
     private addObstacles() {
         for (let col: number = 0; col < this.game.cols; col++) {
-            if (Math.random() < 0.5) {
+            if (this._random.nextDouble() < 0.4) {
                 this.game.board.board[0][col] = new Obstacle();
             }
         }
@@ -86,5 +98,9 @@ export class GameManager {
 
     get score(): number { return this._score; }
 
+    get ticks(): number { return this._ticks; }
+
     set score(score: number) { this._score = score; }
+
+    set ticks(ticks: number) { this._ticks = ticks; }
 }
