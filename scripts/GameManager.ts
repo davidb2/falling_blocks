@@ -34,10 +34,10 @@ export class GameManager {
                     clearInterval(id);
                 }
 
-                if (this.ticks % 1 == 0) {
+                if (this.ticks % 15 == 0) {
                     this.moveDown();
                 }
-                if (this.ticks % 4 == 0) {
+                if (this.ticks % 60 == 0) {
                     this.addObstacles();
                     this.score++;
                 }
@@ -45,7 +45,7 @@ export class GameManager {
                 if (player !== null) {
                     player.move(this.game);
                 }
-            }, 1);
+            }, 10);
     }
 
     private addObstacles() {
