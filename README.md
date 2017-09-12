@@ -4,7 +4,7 @@ This is a quick demo application meant to demonstrate reinforcement learning thr
 
 ## Goal of the Game
 
-![Falling Blocks](https://github.com/ljeabmreosn/falling_blocks/tree/master/resources/falling_blocks.gif)
+![Falling Blocks](resources/falling_blocks.gif)
 
 The goal is to control the blue block in order to avoid the red blocks that are falling. The score is the number of blocks avoided.
 
