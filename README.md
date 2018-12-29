@@ -1,6 +1,6 @@
 # Falling Blocks
 
-This is a quick demo application meant to demonstrate reinforcement learning through [evolutionary computation](https://en.wikipedia.org/wiki/Evolutionary_computation).
+This is a quick demo application meant to demonstrate learning through [evolutionary computation](https://en.wikipedia.org/wiki/Evolutionary_computation).
 
 ## Goal of the Game
 
@@ -16,4 +16,4 @@ Also, when the player makes an illegal move (moving the blue block left when it 
 
 ## Future Additions
 
-I plan to implement the [HyperNEAT]() algorithm when I get the chance to do so. This would probably enhance the learning capacity by allowing different topologies for the neural network to have.
+I plan to implement the [NEAT](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) algorithm when I get the chance to do so. This would probably enhance the learning capacity by allowing different topologies for the neural network to have.
